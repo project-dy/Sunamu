@@ -8,9 +8,15 @@
     "email": "me@nyaomi.xyz",
     "name": "Naomi Calabretta"
   },
+  "contributors": [
+    {
+      "email": "root@noneinfo01.kr",
+      "name": "project-dy"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/NyaomiDEV/Sunamu.git"
+    "url": "https://github.com/project-dy/Sunamu.git"
   },
   "scripts": {
     "lint": "eslint src/ --ext .ts",
