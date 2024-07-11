@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 import { JSDOM } from "jsdom";
 
 export const name = "Genius";
-export const supportedPlatforms = ["linux", "win32"];
+export const supportedPlatforms = ["linux"];
 
 const search_url = "https://genius.com/api/search/song";
 

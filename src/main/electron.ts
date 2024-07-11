@@ -20,13 +20,6 @@ app.commandLine.appendSwitch("ozone-platform-hint", "auto");
 
 function getIcon() {
 	let icoName = "512x512.png";
-	switch (process.platform) {
-		case "win32":
-			icoName = "icon.ico";
-			break;
-		default:
-			break;
-	}
 	return resolve(__dirname, "..", "..", "assets", "icons", icoName);
 }
 
@@ -152,7 +145,7 @@ async function spawnWindow(scene = "electron") {
 		resizable: true,
 		fullscreenable: !isWidgetModeForScene(scene),
 		skipTaskbar: isWidgetModeForScene(scene),
-		focusable: !(process.platform === "win32" && isWidgetModeForScene(scene)),
+		focusable: true,
 		autoHideMenuBar: true,
 		webPreferences: {
 			contextIsolation: true,
@@ -170,10 +163,6 @@ async function spawnWindow(scene = "electron") {
 	win.loadFile(resolve(__dirname, "..", "www", "index.htm"));
 	win.once("ready-to-show", async () => {
 		win.show();
-		if (process.platform === "win32") {
-			const win32platform = await import("./platform/win32");
-			if(isWidgetModeForScene(scene)) win32platform.sendOnBottom(win);
-		}
 	});
 
 	registerWindowCallbacks(win);

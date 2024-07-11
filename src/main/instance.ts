@@ -13,14 +13,7 @@ export default class Instance extends EventEmitter {
 
 	requestLock(): Promise<boolean> {
 		let lockPath;
-		switch(process.platform){
-			case "win32":
-				lockPath = path.join("\\\\?\\pipe", tmpdir(), "SunamuInstance.lock");
-				break;
-			default:
-				lockPath = path.resolve(tmpdir(), "SunamuInstance.lock");
-				break;
-		}
+		lockPath = path.resolve(tmpdir(), "SunamuInstance.lock");
 		
 		return new Promise(resolve => {
 			this.server.on("error", (e: { code: string }) => {
