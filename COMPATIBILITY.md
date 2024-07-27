@@ -23,6 +23,7 @@
 |Spotifyd|Working|While the MPRIS2 implementation is kinda okay, they still need to raise the appropriate D-Bus `PropertiesChanged` event. See [their issue tracker](https://github.com/Spotifyd/spotifyd/issues/457).|
 |Spotify-Qt|Working|The developer has an issue ticket detailing some of the caveats [here](https://github.com/kraxarn/spotify-qt/issues/4).
 |MPV|Working|With the [mpv-mpris](https://github.com/hoyon/mpv-mpris) plugin|
+|ShairPortSync|Working|Works with command `shairport-sync -g -v`
 |Plasma Browser Integration|Working|It all depends on the website, really|
 |Lollypop|Detected|It doesn't implement the `PropertiesChanged` signal|
 |Amarok|Detected|Seems to not report the song information; Reported by @KorbsStudio|

@@ -69,6 +69,7 @@ export type Config = {
 	mxmusertoken: string,
 	spotify: SpotifyConfig,
 	discordRpc: DiscordPresenceConfig,
+	shairPortSync: ShairportSyncConfig,
 	lyricsProviders: LyricsProvidersConfig,
 	targetLyricsCacheSize?: string,
 	logPlayedTracksToFile: boolean,
@@ -77,6 +78,15 @@ export type Config = {
 	scenes: {
 		[sceneName: string]: SceneConfig
 	},
+}
+
+export type ShairportSyncConfig = {
+	enabled: boolean,
+	mpris: string,
+	command: string,
+	timing: number,
+	interval: number,
+	sampleRate: number,
 }
 
 export type SpotifyConfig = {

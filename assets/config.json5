@@ -50,13 +50,28 @@
 	// Specify your Spotify Developer Client ID and Secret here to get the Spotify URL for the playing tracks.
 	spotify: {
 		clientID: "",
-		clientSecret: "" 
+		clientSecret: ""
 	},
 	discordRpc: {
 		// Specify if you want your Discord Presence to show what you are playing.
 		enabled: true,
 		// Blacklist some apps (such as your browser) from ever showing in the Rich Presence.
 		blacklist: []
+	},
+	shairPortSync: {
+		// Specify if you want to get the duration of the track from ShairPort-Sync.
+		enabled: true,
+		// Specify the name of the ShairPort-Sync instance you want to get the duration from.
+		mpris: "org.mpris.MediaPlayer2.ShairportSync",
+		// Specify the command to get the duration of the track from ShairPort-Sync.
+		command: "dbus-send --print-reply=literal --dest=org.gnome.ShairportSync /org/gnome/ShairportSync org.freedesktop.DBus.Properties.Get string:'org.gnome.ShairportSync.RemoteControl' string:'ProgressString'",
+		// Set the timing offset in seconds to adjust the duration of the track from ShairPort-Sync.
+		timing: 0,
+		// Set the interval in milliseconds to poll for the duration of the track from ShairPort-Sync.
+		// It is different from the position polling interval. Because it runs in a separate thread.
+		interval: 100,
+		// Set the sample rate of the track from ShairPort-Sync.
+		sampleRate: 44100
 	},
 	// Sunamu makes use of online and offline services to get lyrics.
 	// Their priority order is outlined here, top to bottom. You can also modify the order here.
