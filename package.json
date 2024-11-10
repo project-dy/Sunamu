@@ -1,70 +1,69 @@
 {
-  "name": "sunamu",
-  "description": "Beautiful Now Playing widget for the desktop, the web and streaming software",
-  "version": "2.2.0",
-  "main": "dist/main/index.js",
-  "license": "MPL-2.0",
-  "author": {
-    "email": "me@nyaomi.xyz",
-    "name": "Naomi Calabretta"
-  },
-  "contributors": [
-    {
-      "email": "root@noneinfo01.kr",
-      "name": "project-dy"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/project-dy/Sunamu.git"
-  },
-  "scripts": {
-    "lint": "eslint src/ --ext .ts",
-    "compile": "tsc -b",
-    "clean": "rm dist/types*; rm -rf dist/main; rm -rf dist/www/lib; rm -rf dist/www/index.{js,d.ts,d.ts.map}; rm -rf targets",
-    "install-deps": "electron-builder install-app-deps; yarn run build:prepare:sharp",
-    "install-deps:node": "npm rebuild; yarn run build:prepare:sharp",
-    "test": "yarn run compile && electron . --sunamu-debug",
-    "test:node": "yarn run compile && node . --sunamu-debug",
-    "dev": "yarn run test",
-    "dev:node": "yarn run test:node",
-    "start": "yarn run run",
-    "start:node": "yarn run run:node",
-    "run": "yarn run compile && electron .",
-    "run:node": "yarn run compile && node .",
-    "build:prepare:sharp": "cd node_modules/sharp && rm -rf vendor && rm -rf build; SHARP_IGNORE_GLOBAL_LIBVIPS=1 yarn run install",
-    "build": "yarn run clean && yarn run compile && electron-builder"
-  },
-  "devDependencies": {
-    "@types/jsdom": "^21.1.6",
-    "@types/mime": "^3.0.4",
-    "@types/node": "^20.11.4",
-    "@types/node-static": "^0.7.11",
-    "@types/obs-studio": "^2.17.2",
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
-    "electron": "^28.1.3",
-    "electron-builder": "^24.9.1",
-    "eslint": "^8.56.0",
-    "socket.io-client": "^4.7.4",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@xhayper/discord-rpc": "^1.1.2",
-    "axios": "^1.6.5",
-    "electron-window-state": "^5.0.3",
-    "golden-fleece": "^1.0.9",
-    "jsdom": "^23.2.0",
-    "json5": "^2.2.3",
-    "mime": "^3.0.0",
-    "node-static": "^0.7.11",
-    "node-vibrant": "^3.2.1-alpha.1",
-    "sharp": "^0.33.2",
-    "socket.io": "^4.7.4",
-    "yargs": "^17.7.2"
-  },
-  "optionalDependencies": {
-    "mpris-for-dummies": "NyaomiDEV/mpris-for-dummies"
-  },
-  "packageManager": "yarn@4.3.1+sha512.af78262d7d125afbfeed740602ace8c5e4405cd7f4735c08feb327286b2fdb2390fbca01589bfd1f50b1240548b74806767f5a063c94b67e431aabd0d86f7774"
+	"name": "sunamu",
+	"description": "Beautiful Now Playing widget for the desktop, the web and streaming software",
+	"version": "2.2.0",
+	"main": "dist/main/index.js",
+	"license": "MPL-2.0",
+	"author": {
+		"email": "me@nyaomi.xyz",
+		"name": "Naomi Calabretta"
+	},
+	"contributors": [
+		{
+			"email": "root@noneinfo01.kr",
+			"name": "project-dy"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/project-dy/Sunamu.git"
+	},
+	"scripts": {
+		"lint": "eslint src/ --ext .ts",
+		"compile": "tsc -b",
+		"clean": "rm dist/types*; rm -rf dist/main; rm -rf dist/www/lib; rm -rf dist/www/index.{js,d.ts,d.ts.map}; rm -rf targets",
+		"install-deps": "electron-builder install-app-deps; yarn run build:prepare:sharp",
+		"install-deps:node": "npm rebuild; yarn run build:prepare:sharp",
+		"test": "yarn run compile && electron . --sunamu-debug",
+		"test:node": "yarn run compile && node . --sunamu-debug",
+		"dev": "yarn run test",
+		"dev:node": "yarn run test:node",
+		"start": "yarn run run",
+		"start:node": "yarn run run:node",
+		"run": "yarn run compile && electron .",
+		"run:node": "yarn run compile && node .",
+		"build:prepare:sharp": "cd node_modules/sharp && rm -rf vendor && rm -rf build; SHARP_IGNORE_GLOBAL_LIBVIPS=1 yarn run install",
+		"build": "yarn run clean && yarn run compile && electron-builder"
+	},
+	"devDependencies": {
+		"@types/jsdom": "^21.1.6",
+		"@types/mime": "^3.0.4",
+		"@types/node": "^20.11.4",
+		"@types/node-static": "^0.7.11",
+		"@types/obs-studio": "^2.17.2",
+		"@typescript-eslint/eslint-plugin": "^6.19.0",
+		"@typescript-eslint/parser": "^6.19.0",
+		"electron": "^28.1.3",
+		"electron-builder": "^24.9.1",
+		"eslint": "^8.56.0",
+		"socket.io-client": "^4.7.4",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"@xhayper/discord-rpc": "^1.1.2",
+		"axios": "^1.6.5",
+		"electron-window-state": "^5.0.3",
+		"golden-fleece": "^1.0.9",
+		"jsdom": "^23.2.0",
+		"json5": "^2.2.3",
+		"mime": "^3.0.0",
+		"node-static": "^0.7.11",
+		"node-vibrant": "^3.2.1-alpha.1",
+		"sharp": "^0.33.2",
+		"socket.io": "^4.7.4",
+		"yargs": "^17.7.2"
+	},
+	"optionalDependencies": {
+		"mpris-for-dummies": "NyaomiDEV/mpris-for-dummies"
+	}
 }
